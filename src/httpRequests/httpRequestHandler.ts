@@ -55,7 +55,7 @@ export class httpRequestHandler implements IHttpRequestHandler{
                 return res;
             })
             .catch(function (err) {
-                console.log(err.response.body);  
+                console.log(err.response.body);
                 throw FactoryHttpError.getError(err);
 
             });
@@ -66,3 +66,9 @@ export class httpRequestHandler implements IHttpRequestHandler{
     }
 
 }
+
+
+
+let httpHandler = new httpRequestHandler('http://localhost:3333');
+httpHandler.get('/send');
+

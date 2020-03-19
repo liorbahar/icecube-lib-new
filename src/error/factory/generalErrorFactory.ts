@@ -5,9 +5,9 @@ export class FactoryAutomationError {
     public static getError(error) : Error{
         if (error instanceof HttpError)
         {
-            console.log(error.toString())
+            console.log(error.message)
             return error;
         }
-        return new AutomationError(error)
+        return new AutomationError(error.message)
     }
 }

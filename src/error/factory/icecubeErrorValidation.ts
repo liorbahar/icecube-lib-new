@@ -2,16 +2,12 @@ import { messageKey, errorKey, componentKey, classNameKey, statusKey } from "../
 
 export class icecubeErrorValidation{
 
-    public static checkIfIcecubeError(error:Object) : boolean{
-        if (error.hasOwnProperty(messageKey) && 
+    public static checkIfIcecubeError(error: Object) : boolean{
+        return (error.hasOwnProperty(messageKey) && 
             error.hasOwnProperty(errorKey) &&
             error.hasOwnProperty(componentKey) &&
             error.hasOwnProperty(classNameKey)&& 
-            error.hasOwnProperty(statusKey)){
-
-            return true;
-            }
-            return false;
+            error.hasOwnProperty(statusKey));
     }
     
 }
